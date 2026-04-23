@@ -8,28 +8,33 @@ namespace MiSide
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-            IConfigurationBuilder configBuild = new ConfigurationBuilder()
-                .SetBasePath(builder.Environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables();
+            //IConfigurationBuilder configBuild = new ConfigurationBuilder()
+            //    .SetBasePath(builder.Environment.ContentRootPath)
+            //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //    .AddEnvironmentVariables();
 
-            IConfiguration configuratioin = configBuild.Build();
-            AppConfig config = configuratioin.GetSection("Project").Get<AppConfig>()!;
+            //IConfiguration configuratioin = configBuild.Build();
+            //AppConfig config = configuratioin.GetSection("Project").Get<AppConfig>()!;
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+            builder.Services.AddControllers();
 
             WebApplication app = builder.Build();
 
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
 
-            app.UseRouting();
+            //app.UseRouting();
 
-            app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
-            // Мое дополнение:
-            app.UseSwagger();
-            app.UseSwaggerUI();
-
+            app.UseHttpsRedirection();
+            app.MapControllers();
+            
             await app.RunAsync();
         }
     }
