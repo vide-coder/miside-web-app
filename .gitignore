@@ -1,0 +1,41 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache
+.vs/
+
+# Build results
+bin/
+obj/
+
+# ASP.NET Core / .NET
+*.log
+*.vspscc
+*.vssscc
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Local app settings / secrets
+appsettings.*.local.json
+secrets.json
+
+# Test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# NuGet
+packages/
+*.nupkg
+**/project.lock.json
+**/artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db
