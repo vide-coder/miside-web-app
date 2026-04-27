@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8b04cd31-d3c8-4904-aaa9-537576900222</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,21 +15,20 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Domain\Entities\" />
-    <Folder Include="Domain\Enums\" />
-    <Folder Include="Domain\Repositories\Abstract\" />
     <Folder Include="Domain\Repositories\EntityFramework\" />
     <Folder Include="Models\ViewComponents\" />
     <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\scss\" />
-    <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

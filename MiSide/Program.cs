@@ -1,3 +1,4 @@
+using MiSide.Domain;
 using MiSide.Infrastructure;
 
 namespace MiSide
@@ -16,9 +17,10 @@ namespace MiSide
             //IConfiguration configuratioin = configBuild.Build();
             //AppConfig config = configuratioin.GetSection("Project").Get<AppConfig>()!;
 
+            builder.Services.AddDataAccess();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
             builder.Services.AddControllers();
+            builder.Services.AddSwaggerGen();
 
             WebApplication app = builder.Build();
 
