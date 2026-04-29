@@ -4,7 +4,7 @@ using MiSide.Models;
 namespace MiSide.Controllers
 {
     [ApiController]
-    [Route("Characters")]
+    [Route("characters")]
     public class GameCharactersController(ICharacterService characterService) : ControllerBase
     {
         [HttpPost]
@@ -14,11 +14,25 @@ namespace MiSide.Controllers
             return NoContent();
         }
 
-        //[HttpGet("test")]
-        //public IActionResult GetCharacterById([FromQuery] int id)
-        //{
-        //    GameCharacter? character = _characters.FirstOrDefault(c => c.Id == id);
-        //    return Ok(character);
-        //}
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetCharacterAsync([FromRoute]int id)
+        {
+            string result = await characterService.GetByIdAsync(id);
+            return Ok(result);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateCharacterAsync([FromRoute] int id,[FromBody] string newName)
+        {
+            await characterService.UpdateAsync(id, newName);
+            return NoContent();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteCharacterAsync([FromRoute] int id)
+        {
+            await characterService.DeleteAsync(id);
+            return NoContent();
+        }
     }
 }
