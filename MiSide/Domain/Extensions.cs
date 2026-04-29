@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MiSide.Domain.Repositories.Abstract;
+using MiSide.Domain.Repositories;
 
 namespace MiSide.Domain
 {
@@ -6,6 +8,7 @@ namespace MiSide.Domain
     {
         public static IServiceCollection AddDataAccess(this IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<ICharacterRepository, GameCharacterRepository>();
             serviceCollection.AddDbContext<AppDbContext>(x =>
             {
                 x.UseSqlServer("Server=localhost;Database=GameCharacterDb;Trusted_Connection=True;TrustServerCertificate=True;");

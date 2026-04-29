@@ -4,20 +4,21 @@ using MiSide.Models;
 namespace MiSide.Controllers
 {
     [ApiController]
-    [Route("characters")]
-    public class GameCharactersController : ControllerBase
+    [Route("Characters")]
+    public class GameCharactersController(ICharacterService characterService) : ControllerBase
     {
-        private List<GameCharacter> _characters = new List<GameCharacter>()
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(string name, string description)
         {
-            new GameCharacter(1, "Alex", ""),
-            new GameCharacter(2, "Andrei", "")
-        };
-
-        [HttpGet("test")]
-        public IActionResult GetCharacterById([FromQuery] int id)
-        {
-            GameCharacter? character = _characters.FirstOrDefault(c => c.Id == id);
-            return Ok(character);
+            await characterService.CreateAsync(name, description);
+            return NoContent();
         }
+
+        //[HttpGet("test")]
+        //public IActionResult GetCharacterById([FromQuery] int id)
+        //{
+        //    GameCharacter? character = _characters.FirstOrDefault(c => c.Id == id);
+        //    return Ok(character);
+        //}
     }
 }
