@@ -1,4 +1,4 @@
-﻿namespace MiSide.Models
+﻿namespace MiSide.Models.GameCharacters
 {
     public interface ICharacterService
     {

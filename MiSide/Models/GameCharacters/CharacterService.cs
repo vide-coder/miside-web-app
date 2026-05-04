@@ -1,6 +1,7 @@
-﻿using MiSide.Domain.Repositories.Abstract;
+﻿using MiSide.Domain.Entities;
+using MiSide.Domain.Repositories.Abstract;
 
-namespace MiSide.Models
+namespace MiSide.Models.GameCharacters
 {
     public class CharacterService(ICharacterRepository characterRepository) : ICharacterService
     {

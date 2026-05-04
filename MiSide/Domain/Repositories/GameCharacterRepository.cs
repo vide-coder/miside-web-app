@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MiSide.Domain.Entities;
 using MiSide.Domain.Repositories.Abstract;
-using MiSide.Models;
 
 namespace MiSide.Domain.Repositories
 {

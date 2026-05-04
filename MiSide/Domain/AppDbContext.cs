@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MiSide.Models;
+using MiSide.Domain.Entities;
 
 namespace MiSide.Domain
 {

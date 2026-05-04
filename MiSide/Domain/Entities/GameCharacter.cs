@@ -1,4 +1,4 @@
-﻿namespace MiSide.Models
+﻿namespace MiSide.Domain.Entities
 {
     public class GameCharacter
     {
