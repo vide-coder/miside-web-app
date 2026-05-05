@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="MiSide/MiSide.csproj" />
+  <Project Path="Core/Domain.csproj" Id="f20ba783-5064-4f0d-b268-35e81ea2ab27" />
+  <Project Path="DataAccess/Application.csproj" Id="e0744942-b30a-45dc-ab7b-b7320d12f431" />
+  <Project Path="Infrastructure/Infrastructure.csproj" Id="1d2409a0-3ec1-4407-956b-d80ec11a3a07" />
+  <Project Path="MiSide/Api.csproj" />
 </Solution>

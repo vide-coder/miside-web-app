@@ -1,14 +1,27 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Api;
+using Api.Configuration;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using MiSide.Domain.Repositories;
 using MiSide.Models.Accounts;
 using MiSide.Models.GameCharacters;
 using System.Text;
 
-namespace MiSide.Models
+namespace Api
 {
     public static class Extensions
     {
+        public static IServiceCollection AddDataAccess(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<ICharacterRepository, GameCharacterRepository>();
+            serviceCollection.AddDbContext<AppDbContext>(x =>
+            {
+                x.UseSqlServer("Server=localhost;Database=GameCharacterDb;Trusted_Connection=True;TrustServerCertificate=True;");
+            });
+
+            return serviceCollection;
+        }
+
         public static IServiceCollection AddBusinessLogic(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<ICharacterService, CharacterService>();

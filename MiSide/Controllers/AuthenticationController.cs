@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MiSide.Models;
+﻿using Api.DTO.Requests;
+using Microsoft.AspNetCore.Mvc;
 using MiSide.Models.Accounts;
 
 namespace MiSide.Controllers

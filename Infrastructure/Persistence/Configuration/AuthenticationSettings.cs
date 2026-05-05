@@ -1,4 +1,4 @@
-﻿namespace MiSide.Models
+﻿namespace Api.Configuration
 {
     public class AuthenticationSettings
     {
