@@ -1,4 +1,4 @@
-﻿namespace MiSide.Domain.Entities
+﻿namespace Domain.Entities
 {
     public class Account
     {

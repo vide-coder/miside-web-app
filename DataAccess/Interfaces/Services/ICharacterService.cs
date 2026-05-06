@@ -1,4 +1,4 @@
-﻿namespace Core.Services
+﻿namespace Application.Interfaces.Services
 {
     public interface ICharacterService
     {

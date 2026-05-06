@@ -1,4 +1,5 @@
-﻿using Core.Domain.RepositoryInterfaces;
+﻿using Application.Interfaces.Services;
+using Core.Domain.RepositoryInterfaces;
 using MiSide.Domain.Entities;
 
 namespace Core.Services
