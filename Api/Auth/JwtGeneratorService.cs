@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using MiSide.Domain.Entities;
 
-namespace Core.Services
+namespace Api.Auth
 {
     public class JwtGeneratorService(IOptions<AuthenticationSettings> options)
     {

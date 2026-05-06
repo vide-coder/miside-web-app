@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MiSide.Models.Accounts;
 
-namespace MiSide.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

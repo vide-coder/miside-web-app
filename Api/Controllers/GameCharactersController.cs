@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiSide.Models.GameCharacters;
 
-namespace MiSide.Controllers
+namespace Api.Controllers
 {
     [ApiController]
-    [Route("auth")]
-    [Authorize(Roles = "Admin")]
-    public class AuthorizedController(ICharacterService characterService) : ControllerBase
+    [Route("characters")]
+    public class GameCharactersController(ICharacterService characterService) : ControllerBase
     {
         [HttpPost]
         public async Task<IActionResult> CreateAsync(string name, string description)
@@ -17,14 +15,14 @@ namespace MiSide.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetCharacterAsync([FromRoute] int id)
+        public async Task<IActionResult> GetCharacterAsync([FromRoute]int id)
         {
             string? result = await characterService.GetByIdAsync(id);
             return Ok(result);
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateCharacterAsync([FromRoute] int id, [FromBody] string newName)
+        public async Task<IActionResult> UpdateCharacterAsync([FromRoute] int id,[FromBody] string newName)
         {
             await characterService.UpdateAsync(id, newName);
             return NoContent();

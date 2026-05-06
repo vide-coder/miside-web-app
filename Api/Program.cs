@@ -1,8 +1,7 @@
-using Api;
 using Api.Configuration;
 using MiSide.Domain;
 
-namespace MiSide
+namespace Api
 {
     public class Program
     {

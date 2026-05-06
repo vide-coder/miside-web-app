@@ -1,8 +1,8 @@
-﻿using Application.Interfaces.Services;
-using Core.Domain.RepositoryInterfaces;
+﻿using Application.Interfaces.Repositories;
+using Application.Interfaces.Services;
 using MiSide.Domain.Entities;
 
-namespace Core.Services
+namespace Application.Services
 {
     public class CharacterService(ICharacterRepository characterRepository) : ICharacterService
     {

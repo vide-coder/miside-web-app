@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities
+﻿namespace Api.Auth
 {
     public class Account
     {

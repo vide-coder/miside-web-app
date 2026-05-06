@@ -1,6 +1,6 @@
 ﻿using MiSide.Domain.Entities;
 
-namespace Core.Domain.RepositoryInterfaces
+namespace Application.Interfaces.Repositories
 {
     public interface ICharacterRepository
     {

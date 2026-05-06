@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiSide.Domain.Entities;
 
-namespace MiSide.Domain
+namespace Infrastructure.Persistence
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {

@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using MiSide.Domain.Entities;
 using MiSide.Domain.Repositories.Abstract;
 
-namespace MiSide.Domain.Repositories
+namespace Infrastructure.Repositories
 {
     public class GameCharacterRepository(AppDbContext context) : ICharacterRepository
     {

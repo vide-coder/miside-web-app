@@ -2,7 +2,7 @@
 using MiSide.Domain.Entities;
 using MiSide.Domain.Repositories;
 
-namespace Core.Services
+namespace Api.Auth
 {
     public class AccountService(AccountRepository accountRepository, JwtGeneratorService jwtService)
     {

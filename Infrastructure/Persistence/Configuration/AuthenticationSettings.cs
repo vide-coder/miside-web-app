@@ -1,4 +1,4 @@
-﻿namespace Api.Configuration
+﻿namespace Infrastructure.Persistence.Configuration
 {
     public class AuthenticationSettings
     {
