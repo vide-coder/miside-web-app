@@ -1,5 +1,5 @@
-using Api.Configuration;
-using MiSide.Domain;
+using Infrastructure;
+using Infrastructure.Persistence.Configuration;
 
 namespace Api
 {

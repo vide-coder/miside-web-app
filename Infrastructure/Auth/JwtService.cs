@@ -3,11 +3,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using MiSide.Domain.Entities;
+using Infrastructure.Persistence.Configuration;
+using Domain.Entities;
 
-namespace Api.Auth
+namespace Infrastructure.Auth
 {
-    public class JwtGeneratorService(IOptions<AuthenticationSettings> options)
+    public class JwtService(IOptions<AuthenticationSettings> options)
     {
         public string GenerateToken(Account account)
         {

@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using MiSide.Domain.Entities;
 
 namespace Infrastructure.Repositories
 {

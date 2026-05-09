@@ -1,5 +1,5 @@
-﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MiSide.Domain.Entities;
 
 namespace Infrastructure.Persistence
 {

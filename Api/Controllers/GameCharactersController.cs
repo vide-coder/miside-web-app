@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MiSide.Models.GameCharacters;
+﻿using Application.Interfaces.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {

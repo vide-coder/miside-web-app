@@ -1,6 +1,6 @@
-﻿using Api.DTO.Requests;
+﻿using Application.DTO.Requests;
+using Application.Services;
 using Microsoft.AspNetCore.Mvc;
-using MiSide.Models.Accounts;
 
 namespace Api.Controllers
 {

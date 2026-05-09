@@ -1,16 +1,16 @@
-﻿using Api;
-using Api.Configuration;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using MiSide.Models.Accounts;
-using MiSide.Models.GameCharacters;
-using System.Text;
+﻿using Api.Auth;
 
-namespace Api
+namespace Application
 {
     public static class Extensions
     {
+        public static IServiceCollection AddBusinessLogic(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<ICharacterService, CharacterService>();
+
+            return serviceCollection;
+        }
+
         public static IServiceCollection AddAuthentication(
             this IServiceCollection serviceCollection, IConfiguration configuration)
         {
