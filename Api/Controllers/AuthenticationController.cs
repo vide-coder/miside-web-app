@@ -1,6 +1,6 @@
-﻿using Application.DTO.Requests;
+﻿using Microsoft.AspNetCore.Mvc;
 using Application.Services;
-using Microsoft.AspNetCore.Mvc;
+using Application.DTO.Requests;
 
 namespace Api.Controllers
 {

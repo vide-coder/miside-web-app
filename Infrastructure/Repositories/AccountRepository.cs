@@ -1,8 +1,9 @@
 ﻿using Domain.Entities;
+using Application.Interfaces.Repositories;
 
 namespace Infrastructure.Repositories
 {
-    public class AccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private static IDictionary<string, Account> _accounts = new Dictionary<string, Account>();
 

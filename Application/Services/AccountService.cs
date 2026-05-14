@@ -1,9 +1,11 @@
 ﻿using Domain.Entities;
+using Application.Interfaces.Repositories;
+using Application.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 
 namespace Application.Services
 {
-    public class AccountService(AccountRepository accountRepository, JwtService jwtService)
+    public class AccountService(IAccountRepository accountRepository, IJwtService jwtService) : IAccountService
     {
         public void Register(string userName, string firstName, string password)
         {

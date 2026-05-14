@@ -5,10 +5,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Infrastructure.Persistence.Configuration;
 using Domain.Entities;
+using Application.Interfaces.Services;
 
 namespace Infrastructure.Auth
 {
-    public class JwtService(IOptions<AuthenticationSettings> options)
+    public class JwtService(IOptions<AuthenticationSettings> options) : IJwtService
     {
         public string GenerateToken(Account account)
         {
