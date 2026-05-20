@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Domain.Entities.GameCharacter;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence

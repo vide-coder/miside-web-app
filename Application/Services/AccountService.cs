@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
-using Application.Interfaces.Repositories;
+﻿using Application.Interfaces.Repositories;
 using Application.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
+using Domain.Entities.Account;
 
 namespace Application.Services
 {

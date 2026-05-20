@@ -1,5 +1,5 @@
 ﻿using Application.Interfaces.Repositories;
-using Domain.Entities;
+using Domain.Entities.GameCharacter;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 

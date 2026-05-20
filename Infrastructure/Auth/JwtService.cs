@@ -4,8 +4,8 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Infrastructure.Persistence.Configuration;
-using Domain.Entities;
 using Application.Interfaces.Services;
+using Domain.Entities.Account;
 
 namespace Infrastructure.Auth
 {
