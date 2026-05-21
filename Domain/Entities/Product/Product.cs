@@ -1,6 +1,4 @@
-﻿using Domain.Enums;
-
-namespace Domain.Entities.Product
+﻿namespace Domain.Entities.Product
 {
     public class Product
     {
@@ -8,7 +6,8 @@ namespace Domain.Entities.Product
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public decimal Price { get; set; }
-        public Category Category { get; set; }
+        public int ProductCategoryId { get; set; }
+        public ProductCategory? Category { get; set; }
         public string LogoImageUrl { get; set; } = string.Empty;
         public List<ProductImage> Images { get; set; } = new List<ProductImage>();
     }

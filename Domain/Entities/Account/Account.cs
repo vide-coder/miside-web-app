@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities.Account
+﻿using Domain.Enums;
+
+namespace Domain.Entities.Account
 {
     public class Account
     {
@@ -6,5 +8,6 @@
         public string UserName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
+        public AccountRole Role { get; set; }
     }
 }

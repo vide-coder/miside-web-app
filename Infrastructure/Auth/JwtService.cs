@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Infrastructure.Persistence.Configuration;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Application.Interfaces.Services;
 using Domain.Entities.Account;
+using Infrastructure.Options;
 
 namespace Infrastructure.Auth
 {
@@ -18,14 +18,16 @@ namespace Infrastructure.Auth
                 new Claim("userName", account.UserName),
                 new Claim("firstName", account.FirstName),
                 new Claim("id", account.Id.ToString()),
-                new Claim(ClaimTypes.Role, "Admin")
+                new Claim(ClaimTypes.Role, account.Role.ToString())
             };
+
+            SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(options.Value.SecretKey)), SecurityAlgorithms.HmacSha256);
 
             JwtSecurityToken jwtToken = new JwtSecurityToken(
                 expires: DateTime.UtcNow.Add(options.Value.Expires),
                 claims: claims,
-                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(options.Value.SecretKey)), SecurityAlgorithms.HmacSha256));
+                signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(jwtToken);
         }

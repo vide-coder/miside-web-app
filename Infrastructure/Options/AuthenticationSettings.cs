@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Persistence.Configuration
+﻿namespace Infrastructure.Options
 {
     public class AuthenticationSettings
     {

@@ -2,7 +2,9 @@
 {
     public enum OrderStatus
     {
-        Pending,
-        Finished,
+        Pending = 1,
+        Processing = 2,
+        Completed = 3, 
+        Cancelled = 4 
     }
 }
